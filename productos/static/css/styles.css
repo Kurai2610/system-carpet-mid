@@ -1,82 +1,13 @@
-/* Estilos para el encabezado */
-header {
-  background-color: #f2f2f2;
-  padding: 10px;
-}
-
-/* Estilos para la barra de navegación */
-.navbar {
+body {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Estilos para el logo */
-.navbar__logo {
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-
-/* Estilos para los enlaces de navegación */
-.navbar__link {
-  margin-right: 10px;
-  text-decoration: none;
-  color: #333;
-}
-
-/* Estilos para el botón de ventas */
-.navbar__button {
-  padding: 5px 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-/* Estilos para el contenido principal */
-.main-content {
-  min-height: calc(
-    100vh - 2 * (10px + 10px)
-  ); /* Calcula la altura mínima del contenido principal */
-}
-
-/* Estilos para el footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-/* Estilos para el contenedor del footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Estilos para el lado izquierdo del footer */
-.footer__left {
+main {
   flex: 1;
 }
 
-/* Estilos para los elementos de contacto en el footer */
-.footer__contact {
-  margin-bottom: 5px;
-  color: #333;
-}
-
-/* Estilos para el lado derecho del footer */
-.footer__right {
-  flex: 1;
-  text-align: right;
-}
-
-/* Estilos para el texto de derechos de autor en el footer */
-.footer__copy {
-  color: #333;
+.nav-item {
+  margin: 10px;
 }

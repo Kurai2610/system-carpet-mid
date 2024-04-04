@@ -61,7 +61,7 @@ class Producto(models.Model):
     modelo = models.ForeignKey(ModeloVehiculo, on_delete=models.PROTECT)
     categoria = models.ForeignKey(CategoriaProducto, on_delete=models.PROTECT)
     link_imagen = models.URLField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    precio = models.PositiveIntegerField()
 
     def __str__(self):
         return f"{self.articulo.nombre} - {self.modelo.nombre} - {self.categoria.nombre}"

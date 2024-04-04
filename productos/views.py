@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Producto
 
 
 def index(request):
@@ -6,8 +7,10 @@ def index(request):
 
 
 def productos(request):
-    return render(request, 'productos.html')
+    productos = Producto.objects.all()
+    return render(request, 'productos.html', {'productos': productos})
 
 
 def detalle_producto(request, producto_id):
-    return render(request, 'detalle_producto.html', {'producto_id': producto_id})
+    producto = Producto.objects.get(pk=producto_id)
+    return render(request, 'detalle_producto.html', {'producto': producto})
