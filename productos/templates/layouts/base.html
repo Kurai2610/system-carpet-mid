@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SystemCarpet</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
   </head>
   <body>
@@ -14,7 +14,7 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             <img
-              src="{% static 'images/autocarpet_logo.png' %}"
+              src="{% static 'images/autocarpet_log.png' %}"
               alt="SystemCarpet Logo"
               class="logo"
             />
@@ -56,13 +56,24 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/admin" style="color: #008fff"
-                  >Administrador</a
-                >
-              </li>
-              <li class="nav-item">
                 <button class="btn btn-primary">Ventas</button>
               </li>
+              {% if user.is_authenticated %} {% if user.is_superuser %}
+              <li class="nav-item">
+                <a class="nav-link" href="/admin">Panel de Administrador</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Cerrar Sesión</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Registrarse</a>
+              </li>
+              {% endif %}
             </ul>
           </div>
         </div>
@@ -76,7 +87,7 @@
         <div class="row">
           <div class="col-lg-4">
             <img
-              src="{% static 'images/autocarpet_logo.png' %}"
+              src="{% static 'images/autocarpet_log.png' %}"
               class="mb-3"
               alt="logo"
             />
@@ -89,7 +100,7 @@
               <a href target="_blank" rel="noreferrer">
                 <span class="sr-only"> Facebook </span>
                 <img
-                  src="{% static 'svg/facebook.svg' %}"
+                  src="{% static 'svg/facebok.svg' %}"
                   alt=""
                   style="width: 24px; height: 24px"
                 />
@@ -97,7 +108,7 @@
               <a href target="_blank" rel="noreferrer">
                 <span class="sr-only"> Instagram </span>
                 <img
-                  src="{% static 'svg/instagram.svg' %}"
+                  src="{% static 'svg/instagra.svg' %}"
                   alt=""
                   style="width: 24px; height: 24px"
                 />
@@ -105,7 +116,7 @@
               <a href target="_blank" rel="noreferrer">
                 <span class="sr-only"> YouTube </span>
                 <img
-                  src="{% static 'svg/youtube.svg' %}"
+                  src="{% static 'svg/youtub.svg' %}"
                   alt=""
                   style="width: 24px; height: 24px"
                 />
